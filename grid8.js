@@ -1,8 +1,11 @@
 /**
- * Позволяет добавлять на любую страницу нашу сетку 8x8 пикселей (квадратами
- * по 64 пикселя). Сетка управляемая, можно её двигать и всячески настраивать.
+ * Позволяет добавлять на любую страницу нашу сетку 10x10 пикселей (квадратами
+ * по 100 пикселей). Сетка управляемая, можно её двигать и всячески настраивать.
+ * 
+ * Добавляется на страницу с помощью вот такой ссылки
+ * javascript:(function(){_my_script=document.createElement('SCRIPT');_my_script.type='text/javascript';_my_script.src='https://github.com/d-kokin-parc/100by10x10_grid/raw/master/js/100by10x10_grid.js';document.getElementsByTagName('head')[0].appendChild(_my_script);})();
  */
-(function(document, options) {
+;(function(document, options) {
 
 	var documentBody = document.getElementsByTagName('body')[0];
 
@@ -316,6 +319,6 @@
 	 */
 	{
 		// Стили для сетки
-		styles: '.da-grid { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTUzMkFFOEExNkIwMTFFMkI3MTBFNzNDOTk4NTczMTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTUzMkFFOEIxNkIwMTFFMkI3MTBFNzNDOTk4NTczMTYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxNTMyQUU4ODE2QjAxMUUyQjcxMEU3M0M5OTg1NzMxNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxNTMyQUU4OTE2QjAxMUUyQjcxMEU3M0M5OTg1NzMxNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiouCOgAAAD/SURBVHja7Nm9DoIwGIXhQpg13qdxcdPoYOR2/bsBbYluUkkcUPp8SaePkuYN7TmcNrP54h5GrNv1HOIaxltAAhAr9I3N7tj10yL7+nF8nJ/rjzm/HgJpu2+/gvzL8+uhL7leTmGKVYfCCwAACq8qyeBytS4WQPMCkXnmPuW+LZC2QNT4KmMiOoLtYTvJPhUAAACHYNE+oPsC4glZPbXy3QiZ3t/3bQE+gAoAAEDRh2D6XUyxcrF5wPNSQh7AB/ABVAAAAOQB8gB5AB/AB1ABAACQB8gD5AF8AB9ABQAAQB4gD5AH8AF8ABUAAAB5gDxAHsAH8AFUAAAAJlgPAQYAZLjTAVtyKd4AAAAASUVORK5CYII=); position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999 }'
+		styles: '.da-grid { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABBElEQVR42u3XwQ2AIBAEQCrA2KT9d4CoBcAD8BLG5H77usFLNuXjLCbOvCD1S62p3yU3PwcEiBwQIHJAgMgBAWKBv4A8YRNjPpD250UPyPUsGQgQIECAyAEBYtFAgABZDKKpa+r+ECcLiBwQIBYNBAgQIECAaOpGU3ey5IAAsWggQIAAAQIECBBNXVOXc7KAWDQQIECAAAECBAgQTd1o6k6WRQMBAgQIECBAgAABIqepa+rFH+JkAbFoIECAAAECBIgcEE3daOpOlkUDAQIECBAgQOSAAAGiqWvqXr6TBQQIECBAgGyfAwIECBBN3Uxv6l50nBwQIHJAgMgBASIHBIgFrs7diccA287A5QoAAAAASUVORK5CYII=); position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999 }'
 	}
 ));
