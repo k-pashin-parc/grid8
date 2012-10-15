@@ -2,7 +2,7 @@
  * Позволяет добавлять на любую страницу нашу сетку 8x8 пикселей (квадратами
  * по 64 пикселя). Сетка управляемая, можно её двигать и всячески настраивать.
  */
-;(function(document, options) {
+(function(document, options) {
 
 	var documentBody = document.getElementsByTagName('body')[0];
 
